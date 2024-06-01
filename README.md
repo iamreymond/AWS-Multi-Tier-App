@@ -34,7 +34,7 @@ Setup in AWS Services
 12. Build Autoscaling Group for Tomcat Instances.
 
 ## Credits
-Special thanks to Sir Imran Teli from Udemy, who is the owner of this project.
+Special thanks to Sir Imran Teli from Udemy, He's the owner of this project.
 
 ## AWS Diagram
 ![LiftAndShift](LiftAndShift.png)
