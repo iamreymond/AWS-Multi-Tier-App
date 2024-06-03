@@ -2,7 +2,7 @@
 Multi-Tier Web Application
 
 ## Brief description of the project
-A web application running on a local machine using the lift & shift strategy.
+A web application running on a local machine. Using the lift & shift strategy, web application will be migrated to AWS Cloud.
 
 1. Nginx => Web Service
 2. Tomcat => Application Server
@@ -14,7 +14,7 @@ A web application running on a local machine using the lift & shift strategy.
 Setup in AWS Services
 
 1. EC2 Instances => VM for Tomcat, RabbitMQ, Memcache, MySQL
-2. ELB => Replacement for Nginx
+2. Elastic Load Balancer => Replacement for Nginx
 3. Autoscaling => Automation for VM Scaling
 4. S3/EFS Storage => Shared Storage
 5. Route 53 => Private DNS Service
