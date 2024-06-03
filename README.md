@@ -37,4 +37,4 @@ Setup in AWS Services
 Special thanks to Sir Imran Teli from Udemy, He's the owner of this project.
 
 ## AWS Diagram
-![LiftAndShift](LiftAndShift.png)
+![Lift&Shift](Lift&Shift.png)
