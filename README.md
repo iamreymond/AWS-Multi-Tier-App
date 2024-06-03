@@ -1,40 +1,38 @@
 # Project Name
-Multi-Tier Web Application
+Multi-Tier Web Application (Re-Architecting)
 
 ## Brief description of the project
-A web application running on a local machine. Using the lift & shift strategy, web application will be migrated to AWS Cloud.
+A web application running on a AWS EC2 Instances using the lift & shift strategy. This strategy will Re-Architecting using all AWS Services.
 
-1. Nginx => Web Service
-2. Tomcat => Application Server
-3. RabbitMQ => Broker/Queuing Agent
-4. Memcache => DB Caching
-5. MySQL => SQL Database
-
-## Installation
-Setup in AWS Services
-
-1. EC2 Instances => VM for Tomcat, RabbitMQ, Memcache, MySQL
-2. Elastic Load Balancer => Replacement for Nginx
-3. Autoscaling => Automation for VM Scaling
-4. S3/EFS Storage => Shared Storage
-5. Route 53 => Private DNS Service
+## AWS Services
+1. Beanstalk => VM for Tomcat
+2. Beanstalk => Nginx LB Replacement
+3. Beanstalk => Automation for VM Scaling
+4. S3/EFS => Storage
+5. RDS Instance => Databases
+6. ElastiCache => Memcached Replacement
+7. ActiveMQ => RabbitMQ Replacement
+8. Route 53 => DNS
+9. CloudFront => Content Delivery Network
 
 ### Flow of Execution:
 1. Login to AWS Account
 2. Create Key Pairs
 3. Create Security Groups
-4. Launch Instances
-5. Update IP to name mapping in Route 53
-6. Build Application from source code
-7. Upload to S3 bucket
-8. Download artifact to Tomcat EC2 Instance
-9. Setup ELB with HTTPS [Certificate from ACM]
-10. Map ELB Endpoint to Website name in DNS provider
-11. Verify
-12. Build Autoscaling Group for Tomcat Instances.
+4. Launch RDS, ElastiCache, ActiveMQ
+5. Create Elastic Beanstalk Environment
+6. Launc EC2 Instance for DB Initializing
+7. Login to the instance and initiliaze RDS DB
+8. Change health check on beanstalk to /login
+9. Add 443 https Listener to ELB
+10. deploy Artifact with Backend Information
+11. Deploy Artifact to Beanstalk
+12. Create CDN with SSL Certificate
+13. Update Entry in GoDaddy DNS Zones
+14. Test the URL
 
 ## Credits
 Special thanks to Sir Imran Teli from Udemy, He's the owner of this project.
 
 ## AWS Diagram
-![Lift&Shift](Lift&Shift.png)
+![Re-Arch_Lift&Shift](Re-Arch_Lift&Shift.png)
