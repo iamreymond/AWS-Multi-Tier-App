@@ -20,17 +20,19 @@ A web application running on a AWS EC2 Instances using the lift & shift strategy
 2. Create Key Pairs
 3. Create Security Groups
 4. Launch RDS, ElastiCache, ActiveMQ
-5. Update IP to name mapping in Route 53
-6. Build Application from source code
-7. Upload to S3 bucket
-8. Download artifact to Tomcat EC2 Instance
-9. Setup ELB with HTTPS [Certificate from ACM]
-10. Map ELB Endpoint to Website name in DNS provider
-11. Verify
-12. Build Autoscaling Group for Tomcat Instances.
+5. Create Elastic Beanstalk Environment
+6. Launc EC2 Instance for DB Initializing
+7. Login to the instance and initiliaze RDS DB
+8. Change health check on beanstalk to /login
+9. Add 443 https Listener to ELB
+10. deploy Artifact with Backend Information
+11. Deploy Artifact to Beanstalk
+12. Create CDN with SSL Certificate
+13. Update Entry in GoDaddy DNS Zones
+14. Test the URL
 
 ## Credits
 Special thanks to Sir Imran Teli from Udemy, He's the owner of this project.
 
 ## AWS Diagram
-![LiftAndShift](LiftAndShift.png)
+![Re-Arch_Lift&Shift](Re-Arch_Lift&Shift.png)
